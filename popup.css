@@ -1,0 +1,19 @@
+html,
+body {
+    min-width: 94vw;
+    min-height: auto;
+}
+#sure,
+#hatirlaticiTipi,
+#reminder {
+    display: inline-block;
+}
+
+#sure {
+    width: 40px;
+    margin-right: 10px;
+}
+
+#reminder {
+    margin-left: 10px;
+}

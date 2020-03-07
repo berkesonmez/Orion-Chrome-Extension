@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" type="text/css" href="popup.css" />
+        <title>Orion+</title>
+    </head>
+    <body>
+        <div id="main">
+            <h2>Hatırlatıcı Süresi</h2>
+            <p>
+                Sınavların ne zaman hatırlatılacağını seçiniz.
+            </p>
+            <label for="sure"></label>
+            <input type="number" name="sure" id="sure" min="0" value="0" />
+            <select id="hatirlaticiTipi">
+                <option value="dakika">dakika</option>
+                <option value="saat">saat</option>
+                <option value="gun">gün</option>
+                <option value="hafta">hafta</option>
+            </select>
+            <p id="reminder">önce hatırlat</p>
+            <button id="indir">Takvim oluştur</button>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>

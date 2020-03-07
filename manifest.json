@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Orion+",
+    "version": "0.1",
+    "description": "Sınavlarınızı takviminize eklemenizi sağlayan eklenti.",
+    "content_scripts": [
+        {
+            "matches": ["*://orion.iku.edu.tr/*"],
+            "js": [
+                "FileSaver.js",
+                "ics.js",
+                "moment-with-locales.js",
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": "ct.png",
+        "default_title": "Sınavlar ekranına gelince tıklayınız."
+    },
+    "permissions": ["tabs", "declarativeContent"],
+    "icons": { "128": "ct.png" }
+}
