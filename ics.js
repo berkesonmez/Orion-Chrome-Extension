@@ -269,8 +269,6 @@ var ics = function (uidDomain, prodId) {
                     } else if (reminder.hatirlaticiTipi === "hafta") {
                         reminderString += "W";
                     }
-                    console.log(reminder.sure, reminder.hatirlaticiTipi);
-                    console.log(reminderString);
                 }
             }
 
