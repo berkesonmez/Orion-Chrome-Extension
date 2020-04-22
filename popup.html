@@ -6,23 +6,61 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" type="text/css" href="popup.css" />
         <title>Orion+</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        <div id="main">
-            <h2>Hatırlatıcı Süresi</h2>
-            <p>
-                Sınavların ne zaman hatırlatılacağını seçiniz.
-            </p>
-            <label for="sure"></label>
-            <input type="number" name="sure" id="sure" min="0" value="0" />
-            <select id="hatirlaticiTipi">
-                <option value="dakika">dakika</option>
-                <option value="saat">saat</option>
-                <option value="gun">gün</option>
-                <option value="hafta">hafta</option>
-            </select>
-            <p id="reminder">önce hatırlat</p>
-            <button id="indir">Takvim oluştur</button>
+        <div class="container" style="min-width: 400px; min-height: auto;">
+            <div class="row" style="padding: 0.5rem 0;">
+                <div class="col-md-12 text-center">
+                    <h2>Hatırlatıcı Süresi</h2>
+                </div>
+                <div class="col-md-12 text-center mt-4">
+                    <p class="text-center lead">
+                        Sınavların ne zaman hatırlatılacağını seçiniz.
+                    </p>
+                </div>
+            </div>
+
+            <form class="form-inline">
+                <div class="row">
+                    <div class="col w-25">
+                        <input
+                            type="number"
+                            name="sure"
+                            id="sure"
+                            min="0"
+                            value="0"
+                            class="form-control"
+                        />
+                    </div>
+                    <div class="col">
+                        <select
+                            id="hatirlaticiTipi"
+                            class="form-control mb-2 mr-sm-2"
+                        >
+                            <option value="dakika">dakika</option>
+                            <option value="saat">saat</option>
+                            <option value="gun">gün</option>
+                            <option value="hafta">hafta</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <p id="reminder" class="mb-0 pt-2">önce hatırlat</p>
+                    </div>
+                </div>
+
+                <button
+                    id="indir"
+                    class="btn btn-primary btn-lg btn-block mt-2"
+                >
+                    Takvim oluştur
+                </button>
+            </form>
         </div>
         <script src="popup.js"></script>
     </body>

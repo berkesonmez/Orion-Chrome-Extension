@@ -1,7 +1,7 @@
 /* global saveAs, Blob, BlobBuilder, console */
 /* exported ics */
 
-var ics = function(uidDomain, prodId) {
+var ics = function (uidDomain, prodId) {
     "use strict";
 
     if (
@@ -24,7 +24,7 @@ var ics = function(uidDomain, prodId) {
     var calendarStart = [
         "BEGIN:VCALENDAR",
         "PRODID:" + prodId,
-        "VERSION:2.0"
+        "VERSION:2.0",
     ].join(SEPARATOR);
     var calendarEnd = SEPARATOR + "END:VCALENDAR";
     var BYDAY_VALUES = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
@@ -34,7 +34,7 @@ var ics = function(uidDomain, prodId) {
          * Returns events array
          * @return {array} Events
          */
-        events: function() {
+        events: function () {
             return calendarEvents;
         },
 
@@ -42,7 +42,7 @@ var ics = function(uidDomain, prodId) {
          * Returns calendar
          * @return {string} Calendar in iCalendar format
          */
-        calendar: function() {
+        calendar: function () {
             return (
                 calendarStart +
                 SEPARATOR +
@@ -60,7 +60,7 @@ var ics = function(uidDomain, prodId) {
          * @param  {string} stop        Ending date of event
          * @param  {string} reminder    Reminding time of event
          */
-        addEvent: function(
+        addEvent: function (
             subject,
             description,
             location,
@@ -124,7 +124,7 @@ var ics = function(uidDomain, prodId) {
                         }
 
                         // Filter any possible repeats
-                        rrule.byday = rrule.byday.filter(function(elem, pos) {
+                        rrule.byday = rrule.byday.filter(function (elem, pos) {
                             return rrule.byday.indexOf(elem) == pos;
                         });
 
@@ -292,13 +292,7 @@ var ics = function(uidDomain, prodId) {
                 "DESCRIPTION:Reminder",
                 "TRIGGER:" + reminderString,
                 "END:VALARM",
-                // "BEGIN:VALARM",
-                // "ACTION:AUDIO",
-                // "REPEAT:2",
-                // "ATTACH;VALUE=URI:Glass",
-                // "TRIGGER:PT2H",
-                // "END:VALARM",
-                "END:VEVENT"
+                "END:VEVENT",
             ];
 
             if (rruleString) {
@@ -316,7 +310,7 @@ var ics = function(uidDomain, prodId) {
          * @param  {string} filename Filename
          * @param  {string} ext      Extention
          */
-        download: function(filename, ext) {
+        download: function (filename, ext) {
             if (calendarEvents.length < 1) {
                 return false;
             }
@@ -348,7 +342,7 @@ var ics = function(uidDomain, prodId) {
         /**
          * Build and return the ical contents
          */
-        build: function() {
+        build: function () {
             if (calendarEvents.length < 1) {
                 return false;
             }
@@ -360,6 +354,6 @@ var ics = function(uidDomain, prodId) {
                 calendarEnd;
 
             return calendar;
-        }
+        },
     };
 };
